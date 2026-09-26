@@ -92,7 +92,7 @@ export const maturity = {
   stages: [
     { name: "Recognize", line: "Name the digital-asset exposure", items: ["Executive POV", "PR + trade media", "Analyst relations"] },
     { name: "Justify", line: "Arm the buying committee", items: ["Seller story", "Executive briefing", "ROI model"] },
-    { name: "Validate", line: "Clear vendor and model risk", items: ["Governance package", "Technical validation", "Customer proof"] },
+    { name: "Validate", line: "Clear vendor and model risk", items: ["Technical validation", "Governance package", "Customer proof"] },
     { name: "Pilot", line: "Prove it on their own alerts", items: ["Chain on Your SOP", "Workshop", "Solutions + CS"] },
     { name: "Scale", line: "Earn the next workflow", items: ["Customer success", "Workflow library", "Customer advocacy"] },
   ],
@@ -123,8 +123,8 @@ export const maturity = {
     },
   ],
   // The phase (0 Foundational, 1 Advancing, 2 Mature) in which each tactic
-  // switches on. Priority sets the pace: each stage's first tactic runs from
-  // day one, its second joins in Advancing, its third in Mature (5, 10, 15).
+  // switches on: 6, then 11, then all 15. Scale waits for Advancing, once
+  // there is a first customer to grow.
   activates: {
     // Recognize
     "Executive POV": 0,
@@ -132,18 +132,18 @@ export const maturity = {
     "Analyst relations": 2,
     // Justify
     "Seller story": 0,
-    "Executive briefing": 1,
+    "Executive briefing": 0,
     "ROI model": 2,
     // Validate
-    "Governance package": 0,
-    "Technical validation": 1,
-    "Customer proof": 2,
+    "Technical validation": 0,
+    "Governance package": 1,
+    "Customer proof": 1,
     // Pilot
     "Chain on Your SOP": 0,
-    "Workshop": 1,
+    "Workshop": 0,
     "Solutions + CS": 2,
     // Scale
-    "Customer success": 0,
+    "Customer success": 1,
     "Workflow library": 1,
     "Customer advocacy": 2,
   } as Record<string, number>,

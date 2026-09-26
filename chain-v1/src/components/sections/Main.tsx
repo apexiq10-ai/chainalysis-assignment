@@ -528,15 +528,14 @@ export function S07() {
           ))}
         </div>
         <div className="ph-sum" aria-live="polite">
-          <p className="t-label">
+          <p className="t-label ph-count">
             <span className="mute">{maturity.activeLabel}</span>{" "}
             <span className="num">{pad2(lit)}</span> / {pad2(all.length)}
           </p>
-          <p className="ph-hd">{p.headline}</p>
-          <p className="ph-body">{p.body}</p>
-          <p className="t-label ph-focus">
-            <span className="mute">{maturity.focusLabel}</span> {p.focus}
-          </p>
+          <div className="ph-card">
+            <p className="ph-hd">{p.headline}</p>
+            <p className="ph-body">{p.body}</p>
+          </div>
         </div>
       </B>
       <B n={2} v="cut" className="journey" data-phase={phase}>

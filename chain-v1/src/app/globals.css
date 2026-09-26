@@ -386,9 +386,11 @@ video { display: block; }
 .journey .stage li.off { border-style: dashed; border-color: rgba(14, 16, 19, 0.5); color: rgba(14, 16, 19, 0.52); }
 .journey .stage li.new { animation: wipe 0.42s var(--ease-trace) both; }
 @media (prefers-reduced-motion: reduce) { .journey .stage li.new { animation: none; } }
-.maturity { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch; }
-.ph-nav { grid-column: 1 / 4; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.ph-nav .thesis { grid-column: 1 / -1; padding: 0 var(--inset) 8px; }
+/* Two shared rows: labels (thesis, active plays) on top, then the phase bars
+   and the summary card, whose top rules sit on one line. */
+.maturity { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); grid-template-rows: auto auto; align-items: stretch; }
+.ph-nav { grid-column: 1 / 4; grid-row: 1 / 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: subgrid; }
+.ph-nav .thesis { grid-column: 1 / -1; padding: 0 var(--inset) 8px; align-self: end; }
 .ph { display: flex; flex-direction: column; gap: clamp(4px, 0.8vh, 10px); margin-inline: var(--inset); padding: clamp(8px, 1.3vh, 16px) clamp(10px, 0.9vw, 16px) clamp(10px, 1.5vh, 18px); border-top: 3px solid var(--ink); text-align: left; cursor: pointer; color: var(--ink); }
 .ph:hover:not(.on) { background: rgba(14, 16, 19, 0.08); }
 .ph:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
@@ -397,15 +399,17 @@ video { display: block; }
 .ph-nm { font-family: var(--f-display); font-variation-settings: "wdth" 125; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(1.05rem, min(1.45vw, 2.9vh), 2rem); }
 .ph-ev { line-height: 1.35; }
 .ph:not(.on) .ph-ev { color: var(--mute); }
-.ph-sum { grid-column: 4 / 6; display: flex; flex-direction: column; gap: clamp(4px, 0.8vh, 10px); margin-inline: var(--inset); padding-top: 8px; border-top: 3px solid var(--ink); align-self: end; }
+.ph-sum { grid-column: 4 / 6; grid-row: 1 / 3; display: grid; grid-template-rows: subgrid; margin-inline: var(--inset); }
+.ph-count { padding-bottom: 8px; align-self: end; }
+.ph-card { display: flex; flex-direction: column; gap: clamp(4px, 0.8vh, 10px); padding-top: clamp(8px, 1.3vh, 16px); border-top: 3px solid var(--ink); }
 .ph-hd { font-family: var(--f-display); font-variation-settings: "wdth" 112; font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-size: clamp(1.1rem, min(1.8vw, 3.3vh), 2.4rem); }
 .ph-body { font-size: clamp(0.9rem, min(1.02vw, 1.9vh), 1.3rem); line-height: 1.3; }
-.ph-focus { line-height: 1.4; }
 @media (max-width: 900px) {
   .maturity { grid-template-columns: 1fr; row-gap: 18px; }
   .ph-nav, .ph-sum { grid-column: 1; }
   .ph-nav { grid-template-columns: 1fr; row-gap: 6px; }
-  .ph-sum { align-self: start; }
+  .ph-nav, .ph-sum { grid-row: auto; grid-template-rows: none; }
+  .ph-sum { display: flex; flex-direction: column; }
   .journey { grid-template-columns: 1fr; row-gap: 22px; padding-top: 0; }
   .thread { display: none; }
   .journey .stage::before { display: none; }
@@ -641,6 +645,7 @@ video { display: block; }
   .s05 h2 { padding-bottom: 10px; }
   .roles li > button { padding-block: 5px; }
   .roles .q { font-size: clamp(1.3rem, 2.4vw, 2.6rem); }
+  .journey .stage li { padding-block: 7px; }
 }
 
 /* ------------------------------------------------------ reduced motion */

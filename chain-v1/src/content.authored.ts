@@ -88,7 +88,6 @@ export const channelNotes = [
 // approved s07 matrix (the full matrix stays in appendix A5).
 export const maturity = {
   thesis: "You earn channel complexity",
-  focusLabel: "Focus",
   activeLabel: "Active plays",
   stages: [
     { name: "Recognize", line: "Name the digital-asset exposure", items: ["Executive POV", "PR + trade media", "Analyst relations"] },
@@ -105,7 +104,6 @@ export const maturity = {
       motion: "Focused distribution",
       headline: "Prove the wedge.",
       body: "Start with the channels closest to product truth, the buyer and the field. The goal is learning and credible proof, not maximum reach.",
-      focus: "Prove the buyer problem, equip the field, create evidence.",
     },
     {
       name: "Advancing",
@@ -114,7 +112,6 @@ export const maturity = {
       motion: "Selective expansion",
       headline: "Expand what works.",
       body: "Add distribution around the messages, audiences and motions already producing signal. Turn individual wins into a repeatable engine.",
-      focus: "Repeat proven motions, add reach, build compounding proof.",
     },
     {
       name: "Mature",
@@ -123,12 +120,11 @@ export const maturity = {
       motion: "Orchestrated scale",
       headline: "Compound the system.",
       body: "Orchestrate the full channel system around behavioral signals, customer proof and repeatable plays. Scale precision, not activity.",
-      focus: "Scale proven plays, personalize by signal, compound institutional proof.",
     },
   ],
   // The phase (0 Foundational, 1 Advancing, 2 Mature) in which each tactic
-  // switches on. The filter for phase 0: does it prove the wedge or learn
-  // directly from the buyer?
+  // switches on. Priority sets the pace: each stage's first tactic runs from
+  // day one, its second joins in Advancing, its third in Mature (5, 10, 15).
   activates: {
     // Recognize
     "Executive POV": 0,
@@ -136,19 +132,19 @@ export const maturity = {
     "Analyst relations": 2,
     // Justify
     "Seller story": 0,
-    "Executive briefing": 0,
-    "ROI model": 1,
+    "Executive briefing": 1,
+    "ROI model": 2,
     // Validate
     "Governance package": 0,
-    "Technical validation": 0,
-    "Customer proof": 1,
+    "Technical validation": 1,
+    "Customer proof": 2,
     // Pilot
     "Chain on Your SOP": 0,
-    "Workshop": 0,
-    "Solutions + CS": 1,
+    "Workshop": 1,
+    "Solutions + CS": 2,
     // Scale
-    "Customer success": 1,
-    "Workflow library": 2,
+    "Customer success": 0,
+    "Workflow library": 1,
     "Customer advocacy": 2,
   } as Record<string, number>,
 };

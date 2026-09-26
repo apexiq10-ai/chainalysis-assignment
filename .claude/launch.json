@@ -1,0 +1,32 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "chain-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "--prefix",
+        "chain-v1",
+        "run",
+        "dev",
+        "--",
+        "-p",
+        "3217"
+      ],
+      "port": 3217
+    },
+    {
+      "name": "chain-prod",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "--prefix",
+        "chain-v1",
+        "serve",
+        "chain-v1/out",
+        "-l",
+        "3218"
+      ],
+      "port": 3218
+    }
+  ]
+}

@@ -1,0 +1,787 @@
+CHAINALYSIS CHAIN GTM PRESENTATION
+Approved content source
+
+MAIN DECK
+Apple-like presentation style: dark, cinematic, sparse, and focused on one idea per slide.
+
+
+SLIDE 01 - OPEN
+
+ON-SCREEN COPY
+
+MONEY MOVES AT
+MACHINE SPEED.
+
+Build second line:
+
+FIN-TELLIGENCE
+HAS TO KEEP UP.
+
+Then reveal the product signature:
+
+CHAIN
+Blockchain intelligence, put to work.
+
+SPEAKER NOTES
+
+Digital assets increasingly operate on infrastructure that never closes: stablecoins, tokenized assets, custody, payments, and activity that crosses chains and jurisdictions.
+
+But human-paced investigation and control processes still shape how institutions understand that activity.
+
+So I would build the launch around one simple tension:
+
+Money moves at machine speed. Financial intelligence has to keep up.
+
+Chain can help solve that problem.
+
+EXECUTION
+
+Use five to seven seconds of subtle transactional motion, not a video. Show one point becoming ten, then one hundred. Reveal Chain within approximately 20 seconds.
+
+
+SLIDE 02 - PRODUCT
+
+ON-SCREEN COPY
+
+MEET CHAIN.
+
+From question to execution.
+
+Build sequentially:
+
+ASK
+Understand what happened.
+
+→
+
+CREATE
+Make the work.
+
+→
+
+CODIFY
+Make what works repeatable.
+
+Then:
+
+Blockchain intelligence,
+put to work.
+
+Small annotation:
+
+Ask maps to Chainalysis "Converse."
+
+SPEAKER NOTES
+
+Chainalysis describes the product through Converse, Create, and Codify. For the customer story, I would simplify Converse to Ask.
+
+Ask a question against Chainalysis intelligence.
+
+Create the investigation, report, graph, or artifact around it.
+
+When a process works, Codify turns that process into something repeatable.
+
+That last step becomes particularly important for financial institutions.
+
+
+SLIDE 03 - THE WEDGE
+
+ON-SCREEN COPY
+
+Eyebrow:
+
+WHERE I WOULD START
+
+ONE ALERT.
+
+Build:
+
+LESS PREPARATION.
+MORE JUDGMENT.
+
+TODAY
+
+ALERT
+
+Research
+Trace
+Context
+Entities
+Procedure
+Evidence
+Case prep
+
+↓
+
+HUMAN DECISION
+
+WITH CHAIN
+
+ALERT
+
+↓
+
+CHAIN
+Enrich. Investigate. Prepare.
+
+↓
+
+HUMAN REVIEW + DECISION
+
+Bottom line:
+
+Alert enrichment + investigation preparation
+
+SPEAKER NOTES
+
+I would resist launching every use case at once.
+
+The strongest initial FI wedge is alert enrichment and investigation preparation.
+
+It contains repetitive work. We can establish a baseline. Most importantly, the human retains the material judgment.
+
+Chain does not need to replace the investigator to create substantial value.
+
+It needs to bring the investigator to the moment of judgment faster and with better preparation.
+
+
+SLIDE 04 - THE PRODUCT INSIGHT
+
+ON-SCREEN COPY
+
+THE MAGIC ISN'T
+THE FIRST ANSWER.
+
+Beat.
+
+IT'S THE NEXT
+100 RUNS.
+
+Supporting statement:
+
+Codify turns a proven procedure into a repeatable, evidenced workflow.
+
+Visual:
+
+1 case → 1 workflow → 100 runs
+
+Underneath, appear quietly:
+
+Chain preserves the procedure
+Chain records inputs + sources + actions
+Human review remains visible
+
+Final line:
+
+From assistance
+to operating model.
+
+SPEAKER NOTES
+
+This is where I think the FI story becomes more interesting than another AI assistant.
+
+One useful answer helps one investigator once.
+
+But if the institution can take a successful procedure and turn it into a repeatable workflow, we begin changing the operating model.
+
+That is why I would put disproportionate weight behind Codify for financial institutions.
+
+Ask and Create remain important because they create immediate utility.
+
+But Codify is where Chain can potentially move from individual productivity into institutional leverage.
+
+
+SLIDE 05 - BUYERS
+
+ON-SCREEN COPY
+
+SAME CHAIN.
+DIFFERENT STAKES.
+
+Use four large statements, not a matrix.
+
+INVESTIGATOR
+
+"Get me to the decision faster."
+
+Case complexity / backlog
+
+HEAD OF FINANCIAL CRIME
+
+"Help my team absorb more."
+
+Volume / capacity / consistency
+
+CCO / RISK
+
+"Let me see how we got there."
+
+Governance / audit / defensibility
+
+DIGITAL ASSETS
+
+"Don't let controls cap growth."
+
+Custody / stablecoins / tokenization / payments
+
+Footer:
+
+One product story. Four buying consequences.
+
+SPEAKER NOTES
+
+The message changes because the job changes.
+
+The investigator buys time and better preparation.
+
+The Financial Crime leader buys capacity and consistency.
+
+Risk buys visibility and reviewability.
+
+The digital-assets leader buys the ability to grow without allowing operational controls to become the bottleneck.
+
+I would build one coherent product narrative, then express the consequence differently for each member of the buying committee.
+
+
+SLIDE 06 - GTM I: SEQUENCE
+
+ON-SCREEN COPY
+
+BUILD BELIEF
+BEFORE YOU BUY REACH.
+
+01
+DESIGN
+
+Eligible FI accounts
+
+3 to 5 design partners
+High-volume workflow
+Named workflow owner
+Second-line participation
+
+02
+PROVE
+
+Chain on a real SOP
+
+Baseline
+Pilot
+Replay
+Customer economics
+Governance review
+
+03
+LAUNCH
+
+Turn proof into market evidence
+
+Named partner voices
+Hero workflow demo
+Customer proof
+ROI story
+Governance package
+Seller readiness
+
+04
+SCALE
+
+Surround the market
+
+ABM
+Events
+PR / earned
+Owned content
+Paid / retargeting
+Executive programs
+Customer advocacy
+
+Bottom line:
+
+The pilot creates the proof.
+The proof powers the launch.
+
+SPEAKER NOTES
+
+I would sequence the launch around evidence.
+
+First, select eligible financial institutions with a real workflow and an internal sponsor.
+
+Second, prove the value against an established baseline.
+
+Third, convert what we learn into launch assets, customer evidence, the field story, and the governance package.
+
+Only then do we turn up the volume.
+
+The pilot does not happen before Marketing begins.
+
+The pilot manufactures the evidence Marketing needs.
+
+
+SLIDE 07 - GTM II: MULTI-CHANNEL
+
+ON-SCREEN COPY
+
+MAKE IT IMPOSSIBLE
+TO MISS.
+
+AND EASY TO TRY.
+
+Run the buyer journey horizontally.
+
+DISCOVER
+
+Create the market moment
+
+Launch film / hero demo
+PR + trade media
+Executive POV
+Organic + paid social
+Product / web
+
+→
+
+UNDERSTAND
+
+Teach the use case
+
+Thought leadership
+SME content
+Webinar / live demo
+Customer voice
+Analyst relations
+
+→
+
+EVALUATE
+
+Arm the buying committee
+
+Seller story
+ROI model
+Customer proof
+Governance package
+Technical validation
+
+→
+
+PILOT
+
+Convert interest into evidence
+
+ABM
+Executive briefing
+Workshop
+Chain on Your SOP
+Solutions + CS
+
+→
+
+EXPAND
+
+Create the next use case
+
+Workflow library
+Customer success
+Account expansion
+Customer advocacy
+Events
+
+Bottom line:
+
+One story.
+Every channel.
+One next action.
+
+SPEAKER NOTES
+
+This is not a single announcement. It is a connected buyer journey.
+
+The launch creates the moment.
+
+Content and customer voices build understanding.
+
+Sales, governance, and technical materials help the buying group evaluate.
+
+The pilot converts belief into evidence.
+
+Then customer success and the account motion turn the first workflow into the second and third.
+
+I would make the channels behave like one system instead of running events, demand, and seller enablement as separate activities.
+
+
+SLIDE 08 - MEASUREMENT
+
+ON-SCREEN COPY
+
+DON'T MEASURE
+THE APPLAUSE.
+
+Beat.
+
+MEASURE
+THE BEHAVIOR.
+
+USE
+
+Active users
+Workflow runs
+Repeat usage
+
+VALUE
+
+Prep time
+Analyst touches
+Rework
+Evidence completeness
+
+TRUST
+
+Corrections
+Overrides
+Consistency
+Continued use
+
+COMMERCIAL
+
+Pilot → production
+Expansion
+Opportunity progression
+Sales cycle
+Pipeline / revenue
+
+Bottom line:
+
+Reach tells us people saw Chain.
+Behavior tells us whether Chain mattered.
+
+SPEAKER NOTES
+
+I would establish the customer baseline before the pilot.
+
+Then I want four kinds of evidence.
+
+Are people using it?
+
+Did the work actually improve?
+
+Do they trust it enough to repeat the workflow?
+
+Does that customer behavior lead to production deployment, expansion, and commercial movement?
+
+An announcement does not make a launch successful. Changes in customer and field behavior do.
+
+
+SLIDE 09 - CLOSE
+
+ON-SCREEN COPY
+
+START WITH
+ONE ALERT.
+
+Build visually:
+
+Alert preparation
+
+↓
+
+Investigations
+
+↓
+
+Monitoring
+
+↓
+
+Source of funds
+
+↓
+
+Due diligence
+
+↓
+
+Digital-asset operations
+
+Then:
+
+EARN THE RIGHT
+TO CHANGE THE INSTITUTION.
+
+Clear the screen.
+
+Return to the opening:
+
+MONEY MOVES
+AT MACHINE SPEED.
+
+FIN-TELLIGENCE
+HAS TO KEEP UP.
+
+Then show the final lockup:
+
+CHAIN
+
+Blockchain intelligence, put to work.
+
+SPEAKER NOTES
+
+The wedge is narrow by design.
+
+We start with a workflow where we can prove that Chain changes the economics and quality of the work.
+
+Then we earn the next workflow.
+
+And the next team.
+
+Ultimately, we earn a broader role in how the institution operates digital assets.
+
+Money moves at machine speed. Financial intelligence has to keep up.
+
+That is the opportunity I would build the Chain launch around.
+
+Black.
+
+Q&A.
+
+
+APPENDIX
+AWS-style presentation approach: light, analytical, information-rich, and conclusion-led. Each slide uses business prose to explain the reasoning and an exhibit to make the argument easy to inspect.
+
+
+APPENDIX A1 - CATEGORY CONVERGENCE
+
+HEADLINE
+
+AI investigation assistance is becoming a category requirement; Chain should differentiate on repeatable institutional workflow.
+
+BUSINESS NARRATIVE
+
+AI-assisted investigation no longer creates a distinctive position on its own. TRM, Elliptic, and Chainalysis all publicly describe capabilities that combine natural-language interaction, investigative assistance, evidence, and human oversight. These capabilities remain important, but they increasingly define the minimum bar for the category rather than a durable market position.
+
+Chain's stronger financial-institution opportunity begins after the first answer. Codify allows a successful procedure to become a repeatable workflow, while Chain records the inputs, sources, and actions associated with each run. The launch should test whether repeatable workflow execution, evidenced runs, and Chainalysis intelligence produce superior workflow economics and institutional adoption. Marketing should treat this proposition as a hypothesis to prove with customers, not an exclusivity claim to assert.
+
+EXHIBIT: CATEGORY CONVERGENCE
+
+Capability                              TRM                         Elliptic                    Chain
+Conversational investigation           Yes                         Yes                         Yes
+Human oversight                        Yes                         Yes                         Yes
+Evidence / traceability                Yes                         Yes                         Yes
+Investigation assistance               Yes                         Yes                         Yes
+Artifact creation                      Product dependent           Product dependent           Create
+Repeatable workflow execution          Public materials do not     Public materials do not     Codify
+                                        verify                      verify
+Code-based deterministic workflow      Public materials do not     Public materials do not     Chainalysis makes this
+claim                                   verify                      verify                      claim publicly
+
+IMPLICATION
+
+Do not lead with "AI + evidence." Lead with the operating-model change Chain can potentially enable.
+
+SOURCE NOTE
+
+The team reviewed public company materials in September 2026. The absence of a public competitor claim does not establish the absence of a capability.
+
+
+APPENDIX A2 - WORKFLOW PRIORITIZATION
+
+HEADLINE
+
+Alert enrichment and investigation preparation provide the fastest path to proving Chain's broader financial-institution value.
+
+BUSINESS NARRATIVE
+
+The initial FI use case should optimize for proof, not breadth. Alert enrichment and investigation preparation combine repetitive analyst work, a measurable current-state baseline, a clearly bounded human decision, and a natural path into adjacent workflows. That combination allows Chainalysis to test the product under meaningful operating conditions without asking the customer to delegate the final compliance judgment to an agent.
+
+The account team should begin the pilot by documenting the current workflow: elapsed time, analyst touches, research steps, evidence assembly, corrections, and handoffs. The team can then evaluate Chain against that baseline. If the workflow demonstrates material improvement while maintaining trusted human review, Chainalysis will gain the evidence required to expand into complex tracing, source-of-funds work, law-enforcement response, monitoring, and other digital-asset operations.
+
+EXHIBIT: WORKFLOW PRIORITIZATION
+
+Chart type: Two-by-two matrix
+Y-axis: Expansion potential
+X-axis: Ease of proving customer value
+
+High expansion potential / High ease of proof:
+  Alert enrichment + investigation preparation
+
+High expansion potential / Medium ease of proof:
+  Complex tracing
+  Source of funds
+  Law-enforcement response
+
+Lower expansion potential / High ease of proof:
+  General research / ad hoc intelligence
+
+High expansion potential / Low ease of proof:
+  Autonomous disposition
+
+LAUNCH CRITERIA
+
+Criterion       Why it matters
+Frequent        Improvement compounds with volume
+Measurable      Enables credible before-and-after evidence
+Bounded         Keeps human accountability explicit
+Replayable      Supports validation and control testing
+Expandable      Creates a natural second and third workflow
+
+IMPLICATION
+
+Start where Chain can earn the right to expand.
+
+
+APPENDIX A3 - THE FI BUYING SYSTEM
+
+HEADLINE
+
+Production adoption requires both user demand and second-line permission; the launch must sell to both systems simultaneously.
+
+BUSINESS NARRATIVE
+
+A financial institution does not adopt Chain through a single buyer. Investigators and Financial Crime teams may create user pull because they experience the workflow friction directly. Digital Assets and Operations leaders may sponsor adoption because they need controls to scale with business growth. But none of those constituencies can move the product into production alone.
+
+The second line evaluates a different proposition. Compliance, AI Governance, Internal Audit, Information Security, and Third-Party Risk need to understand how the workflow operates, where model reasoning occurs, what evidence Chain retains, how human review works, and how the institution can test the control over time. The FI launch should answer two questions in parallel: Why should my team use Chain? Why should my institution permit Chain to scale?
+
+EXHIBIT: THE FI BUYING SYSTEM
+
+Creates demand                  Primary value                      Permits scale              Primary requirement
+Investigator                    Faster case preparation            Compliance / Risk          Reviewability
+Head of Financial Crime         Capacity + consistency             AI Governance              Defined automation boundaries
+Digital Assets Leader           Growth without control             Internal Audit             Testability
+                                 bottlenecks
+Operations / COO                Reduced operating friction         InfoSec / TPRM             Security + vendor controls
+
+Both sides converge on:
+
+PRODUCTION DEPLOYMENT
+
+IMPLICATION
+
+Customer proof without governance proof produces interest, not adoption.
+
+
+APPENDIX A4 - PILOT ECONOMICS
+
+HEADLINE
+
+The pilot should establish measurable workflow economics before Marketing turns operational improvement into a market claim.
+
+BUSINESS NARRATIVE
+
+The pilot serves as the evidence engine for the launch. Before the account team introduces Chain into the workflow, it should establish a current-state baseline across the steps that precede human judgment. The team should not simply prove that Chain produces an answer faster. It should determine whether the workflow becomes materially more efficient, consistent, and usable under real operating conditions.
+
+The pilot team should assess success across four dimensions: efficiency, quality, trust, and repeatability. A fast workflow that requires routine correction does not create institutional value. A workflow that produces strong results once but fails to attract repeat use also fails the test. The launch should scale only when customers demonstrate measurable improvement, repeat behavior, and confidence in the evidence Chain produces.
+
+EXHIBIT: BEFORE / AFTER WORKFLOW
+
+CURRENT STATE
+
+Context gathering
+→ tracing
+→ entity research
+→ procedure review
+→ evidence assembly
+→ case preparation
+→ HUMAN REVIEW
+
+CHAIN PILOT
+
+Chain enrichment + preparation
+→ HUMAN REVIEW
+
+BASELINE METRICS
+
+Efficiency              Quality                   Trust                    Adoption
+Elapsed time            Evidence completeness     Correction rate          Repeat usage
+Analyst touches         Rework                    Override rate            Workflow reuse
+Handoffs                Consistency               User confidence          Production decision
+
+SCALE WHEN
+
+Material improvement + trusted output + repeated use + governance acceptance
+
+IMPLICATION
+
+Build the ROI story from measured customer behavior, not retrospective assumptions.
+
+
+APPENDIX A5 - INTEGRATED LAUNCH JOURNEY
+
+HEADLINE
+
+The launch should move from proof to reach to conversion, with every channel reinforcing the same workflow story.
+
+BUSINESS NARRATIVE
+
+The market launch begins before GA with design partners, workflow validation, and customer evidence. Once the proof becomes strong enough, Marketing can create the external moment through a differentiated product story, named customer voices where available, an executive point of view, and a hero workflow demonstration. Thought leadership, SME programming, webinars, demonstrations, and customer evidence must then convert that attention into understanding.
+
+Enterprise evaluation requires a different set of assets. Sales needs a first-call narrative, workflow demo, ROI model, governance package, technical validation materials, and a clear pilot offer. ABM, executive briefings, and a "Chain on Your SOP" workshop can convert qualified interest into a bounded evaluation. After launch, customer success, field teams, events, and a growing workflow library should create expansion and a continuous stream of new proof.
+
+EXHIBIT: INTEGRATED LAUNCH JOURNEY
+
+Stage         Customer job                         Primary channels                         Core asset                 Primary signal
+Discover      Understand why this matters now      PR, launch, paid and organic social,     Hero story                 Qualified engagement
+                                                    web, executive POV
+Understand    See how Chain changes the workflow   Thought leadership, webinars, events,    Workflow demo              Intent
+                                                    SMEs, customer voice
+Evaluate      Determine whether Chain fits         Sales, ABM, technical sessions,          ROI + governance package  Evaluation
+              the institution                      executive briefing
+Pilot         Prove value in our environment       Workshop, Solutions, CS, account team    Chain on Your SOP          Pilot start
+Expand        Apply the proven model elsewhere     QBRs, customer advisory, workflow        New workflow play         Expansion
+                                                    library, events
+
+OPERATING CADENCE
+
+Pre-GA:  Design partners + proof
+GA:      Product reveal + customer evidence + field readiness
++30:     Targeted demand + workshops
++60:     First pilot evidence + workflow content
++90:     Expansion stories + customer advocacy
+
+IMPLICATION
+
+The channels do not operate as separate campaigns. They advance the customer through successive steps in one buying journey.
+
+
+APPENDIX A6 - GA READINESS
+
+HEADLINE
+
+GA should be a business-readiness decision, not a communications date.
+
+BUSINESS NARRATIVE
+
+A credible financial-institution launch requires four forms of readiness to converge. The product must perform the target workflow reliably and expose enough evidence to support review. Design partners must demonstrate measurable customer value and repeat use. The second line must receive enough documentation to understand and evaluate the operating model. The field must also know how to discover, explain, demonstrate, pilot, and defend the product consistently.
+
+This approach creates a more useful GA gate than a communications calendar alone. If one of these dimensions remains materially incomplete, Chainalysis should narrow the launch claim or delay the corresponding market motion instead of asking Marketing to compensate for missing proof. The goal extends beyond announcing Chain. Chainalysis should enter the FI market with enough product, customer, governance, and field evidence to let Sales move directly from launch attention into credible evaluation.
+
+EXHIBIT: GA READINESS MODEL
+
+Product                    Customer                    Governance                   Field
+Workflow performs          Design partners active      Validation guide             First-call story
+Chain provides run         Customers show measured     Model-use disclosure         Demo
+evidence                   improvement
+Chain defines the human    Customers repeat use        Sample run record            Discovery guide
+boundary
+Telemetry supports review  Customers provide           Security / TPRM package      ROI model
+                           referenceable proof
+Team understands change    Customers show an            Change-management guidance  Pilot play
+behavior                   expansion signal
+
+RELEASE PRINCIPLE
+
+GA = PRODUCT + CUSTOMER + GOVERNANCE + FIELD
+
+Not:
+
+GA = ANNOUNCEMENT READY
+
+CLAIM DISCIPLINE
+
+Avoid claims such as "court-ready AI," "regulator-approved," "no hallucinations," or unverified performance gains. When Chainalysis discusses judicial acceptance, it should explicitly attach that claim to the underlying data and methodology, not to conclusions that Chain generates.
+
+IMPLICATION
+
+PMM should own the market claim only after the supporting evidence exists.
+
+
+END OF CONTENT SOURCE

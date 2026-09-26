@@ -456,9 +456,9 @@ export function S06() {
 }
 
 /* 07 · GTM II: MULTI-CHANNEL ------------------------------------------- */
-/* One story, every channel, earned in phases. The approved channel matrix
-   stays whole; the maturity control switches its tactics on as evidence
-   grows: few, then more, then the system. Builds 2 to 4 are the three
+/* One story, every channel, earned in phases. Five bank buyer-journey
+   stages, three prioritized tactics each; the maturity control switches them
+   on as evidence grows: few, then more, then the system. Builds 2 to 4 are the three
    phases, so → walks them and a click picks one. Nothing advances alone. */
 function PhaseButton({ k, phase }: { k: number; phase: number }) {
   const { setStep } = useDeck();
@@ -490,7 +490,7 @@ export function S07() {
   const phase = Math.max(0, Math.min(maturity.phases.length - 1, step - 2));
   const p = maturity.phases[phase];
   const tier = (it: string) => maturity.activates[it] ?? 0;
-  const all = s07.stages.flatMap((st) => st.items);
+  const all = maturity.stages.flatMap((st) => st.items);
   const lit = all.filter((it) => tier(it) <= phase).length;
   // Leaving 07 while reading puts it back on Foundational for the next visit.
   const was = useRef(active);
@@ -544,7 +544,7 @@ export function S07() {
           <line x1="0" y1="6" x2="990" y2="6" vectorEffect="non-scaling-stroke" />
           <path className="tip" d="M986 0 L1000 6 L986 12 Z" />
         </svg>
-        {s07.stages.map((st, k) => (
+        {maturity.stages.map((st, k) => (
           <div className="stage" key={st.name}>
             <span className="t-label mute">{pad2(k + 1)}</span>
             <p className="nm">{st.name}</p>

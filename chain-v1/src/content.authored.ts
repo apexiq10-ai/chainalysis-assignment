@@ -81,13 +81,22 @@ export const channelNotes = [
 ];
 
 // 07 · GTM MATURITY MODEL. Written in the final refinement pass at Arthur's
-// direction. The channel matrix itself stays the approved s07.stages in
-// content.ts: no tactic is added, renamed or removed. This file only says
-// when each existing tactic is switched on, and why.
+// direction. The stages follow how a bank or FSI compliance buyer actually
+// moves: see the exposure, justify it internally, clear model, vendor and
+// security review, prove it on their own alerts, then earn the next workflow.
+// Three tactics per stage, in priority order, each an existing label from the
+// approved s07 matrix (the full matrix stays in appendix A5).
 export const maturity = {
   thesis: "You earn channel complexity",
   focusLabel: "Focus",
   activeLabel: "Active plays",
+  stages: [
+    { name: "Recognize", line: "Name the digital-asset exposure", items: ["Executive POV", "PR + trade media", "Analyst relations"] },
+    { name: "Justify", line: "Arm the buying committee", items: ["Seller story", "Executive briefing", "ROI model"] },
+    { name: "Validate", line: "Clear vendor and model risk", items: ["Governance package", "Technical validation", "Customer proof"] },
+    { name: "Pilot", line: "Prove it on their own alerts", items: ["Chain on Your SOP", "Workshop", "Solutions + CS"] },
+    { name: "Scale", line: "Earn the next workflow", items: ["Customer success", "Workflow library", "Customer advocacy"] },
+  ],
   phases: [
     {
       name: "Foundational",
@@ -117,39 +126,29 @@ export const maturity = {
       focus: "Scale proven plays, personalize by signal, compound institutional proof.",
     },
   ],
-  // The phase (0 Foundational, 1 Advancing, 2 Mature) in which each existing
-  // tactic switches on, keyed by its exact label in s07.stages. The filter for
-  // phase 0: does it prove the wedge or learn directly from the buyer?
+  // The phase (0 Foundational, 1 Advancing, 2 Mature) in which each tactic
+  // switches on. The filter for phase 0: does it prove the wedge or learn
+  // directly from the buyer?
   activates: {
-    // Discover
-    "Launch film / hero demo": 1,
-    "PR + trade media": 1,
+    // Recognize
     "Executive POV": 0,
-    "Organic + paid social": 2,
-    "Product / web": 2,
-    // Understand
-    "Thought leadership": 1,
-    "SME content": 2,
-    "Webinar / live demo": 1,
-    "Customer voice": 1,
+    "PR + trade media": 1,
     "Analyst relations": 2,
-    // Evaluate
+    // Justify
     "Seller story": 0,
+    "Executive briefing": 0,
     "ROI model": 1,
-    "Customer proof": 1,
+    // Validate
     "Governance package": 0,
     "Technical validation": 0,
+    "Customer proof": 1,
     // Pilot
-    "ABM": 1,
-    "Executive briefing": 0,
-    "Workshop": 0,
     "Chain on Your SOP": 0,
+    "Workshop": 0,
     "Solutions + CS": 1,
-    // Expand
-    "Workflow library": 2,
+    // Scale
     "Customer success": 1,
-    "Account expansion": 2,
+    "Workflow library": 2,
     "Customer advocacy": 2,
-    "Events": 2,
   } as Record<string, number>,
 };

@@ -334,8 +334,8 @@ function PersonaMap({ k }: { k: number }) {
         <p className="t-label mute">{r.stakes}</p>
         <p className="p-buys">{r.buys}</p>
       </div>
-      <span className="p-arrow" aria-hidden="true">→</span>
-      <div className="p-col">
+      <span className="p-arrow a1" aria-hidden="true">→</span>
+      <div className="p-col pains">
         <span className="t-label">{personaLabels.pains}</span>
         <ul>
           {p.pains.map((x) => (
@@ -343,7 +343,7 @@ function PersonaMap({ k }: { k: number }) {
           ))}
         </ul>
       </div>
-      <span className="p-arrow" aria-hidden="true">→</span>
+      <span className="p-arrow a2" aria-hidden="true">→</span>
       <div className="p-col msg">
         <span className="t-label">{personaLabels.message}</span>
         <ul>

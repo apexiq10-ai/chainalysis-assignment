@@ -8,7 +8,7 @@ const martian = Martian_Mono({ subsets: ["latin"], axes: ["wdth"], variable: "--
 
 export const metadata: Metadata = {
   title: "Chain · Blockchain intelligence, put to work.",
-  description: "Money moves at machine speed. Fin-telligence has to keep up. A launch narrative for Chain in financial institutions.",
+  description: "Money moves at machine speed. Financial intelligence has to keep up. A launch narrative for Chain in financial institutions.",
   robots: { index: false, follow: false },
   icons: { icon: "/favicon.svg" },
 };

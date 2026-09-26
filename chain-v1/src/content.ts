@@ -18,7 +18,7 @@ export type SectionMeta = {
 
 export const s01 = {
   line1: ["Money moves at", "machine speed."],
-  line2: ["Fin-telligence", "has to keep up."],
+  line2: ["Financial intelligence", "has to keep up."],
   name: "Chain",
   signature: "Blockchain intelligence, put to work.",
   motionTag: "Illustrative motion · not transaction data",
@@ -435,7 +435,7 @@ export const sections: SectionMeta[] = [
   { id: "s04", index: "04", subject: "The product insight", part: "main", steps: 4, modes: ["night", "control"], notes: notes.s04 },
   { id: "s05", index: "05", subject: "Buyers", part: "main", steps: 5, modes: ["broadcast"], notes: notes.s05 },
   { id: "s06", index: "06", subject: "GTM I: Sequence", part: "main", steps: 5, modes: ["night"], notes: notes.s06 },
-  { id: "s07", index: "07", subject: "GTM II: Multi-channel", part: "main", steps: 2, modes: ["broadcast"], notes: notes.s07 },
+  { id: "s07", index: "07", subject: "GTM II: Multi-channel", part: "main", steps: 4, modes: ["broadcast"], notes: notes.s07 },
   { id: "s08", index: "08", subject: "Measurement", part: "main", steps: 5, modes: ["night", "record"], notes: notes.s08 },
   { id: "s09", index: "09", subject: "Close", part: "main", steps: 1, modes: ["night"], notes: notes.s09 },
   // One section; each build is one appendix exhibit (A1 to A6).

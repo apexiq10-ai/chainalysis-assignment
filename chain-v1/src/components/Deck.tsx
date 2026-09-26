@@ -16,12 +16,16 @@ const MAIN = sections.slice(0, LAST_MAIN);
 
 // Reading mode (scrolling) never advances content on a timer. Each section
 // simply shows its resting state: every build in, except 03, whose stages
-// wait for a click. The one exception is the 01 title sequence, which runs
-// once like a film open. Background video is always automatic.
-const READ = sections.map((s) => (s.id === "s03" || s.part === "appendix" ? 0 : s.steps));
+// wait for a click, and 07, which rests on its first maturity phase. The one
+// exception is the 01 title sequence, which runs once like a film open.
+// Background video is always automatic.
+const READ = sections.map((s) => (s.id === "s03" || s.part === "appendix" ? 0 : s.id === "s07" ? 2 : s.steps));
 const OPEN_MS = [1600];
 // Where a jump (index, header ticks, deep link) lands in a section.
 const jumpStep = (i: number) => (i === 0 ? 0 : READ[i]);
+// Where stepping back into a section lands: its last build, except 07,
+// which always opens on its first maturity phase.
+const backStep = (i: number) => (sections[i].id === "s07" ? READ[i] : MAX[i]);
 
 const modeAt = (i: number, step: number): Mode => {
   const m = sections[i].modes;
@@ -45,6 +49,7 @@ export default function Deck() {
   const [steps, setSteps] = useState<number[]>(() => sections.map(() => 0));
   const [arrivals, setArrivals] = useState<number[]>(() => sections.map(() => 0));
   const [cur, setCur] = useState(0);
+  const [onScreen, setOnScreen] = useState<boolean[]>(() => sections.map((_, i) => i === 0));
   const [driver, setDriver] = useState<Driver>("scroll");
   const [indexOpen, setIndexOpen] = useState(false);
   const [reduced, setReduced] = useState(false);
@@ -147,7 +152,7 @@ export default function Deck() {
         return;
       }
       if (apx) return;
-      if (i > 0) goTo(i - 1, i - 1 === APX ? 0 : MAX[i - 1]);
+      if (i > 0) goTo(i - 1, i - 1 === APX ? 0 : backStep(i - 1));
     },
     [goTo, setStepAt],
   );
@@ -179,9 +184,18 @@ export default function Deck() {
     };
   }, [goTo]);
 
-  /* ---- which section holds the viewport: the one crossing its midline */
+  /* ---- which section holds the viewport: the one crossing its midline.
+     Also which sections show at all, so their footage is already running
+     as they scroll in. */
   useEffect(() => {
     const onScroll = () => {
+      const vh = window.innerHeight;
+      const vis = els.current.map((el) => {
+        if (!el) return false;
+        const r = el.getBoundingClientRect();
+        return r.bottom > 0 && r.top < vh;
+      });
+      setOnScreen((prev) => (prev.length === vis.length && prev.every((v, k) => v === vis[k]) ? prev : vis));
       const mid = window.innerHeight / 2;
       const i = els.current.findIndex((el) => {
         if (!el) return false;
@@ -211,17 +225,23 @@ export default function Deck() {
     if (window.location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`);
   }, [cur, steps, ready]);
 
-  /* ---- reading mode: sections arrive in their resting state; only the 01 title sequence is timed */
+  /* ---- reading mode: every section already rests in its reading state
+     before it scrolls into view, so moving between sections never passes
+     through an opening build or a clip that is about to be swapped out */
   useEffect(() => {
     if (driver !== "scroll" || !ready) return;
-    const i = cur;
-    const s = steps[i];
-    if (i === 0) {
-      if (s >= MAX[0]) return;
-      const t = window.setTimeout(() => setStepAt(0, s + 1), OPEN_MS[s]);
-      return () => window.clearTimeout(t);
-    }
-    if (s < READ[i]) setStepAt(i, READ[i]);
+    sections.forEach((_, i) => {
+      if (i > 0 && stepsRef.current[i] < READ[i]) setStepAt(i, READ[i]);
+    });
+  }, [driver, ready, setStepAt]);
+
+  /* ---- the 01 title sequence is the only timed build */
+  useEffect(() => {
+    if (driver !== "scroll" || !ready || cur !== 0) return;
+    const s = steps[0];
+    if (s >= MAX[0]) return;
+    const t = window.setTimeout(() => setStepAt(0, s + 1), OPEN_MS[s]);
+    return () => window.clearTimeout(t);
   }, [cur, steps, driver, ready, setStepAt]);
 
   /* ---- input: wheel/touch hand control to the reader; keys to the presenter */
@@ -330,6 +350,7 @@ export default function Deck() {
             step: steps[i],
             mode: modeAt(i, steps[i]),
             active: i === cur,
+            onScreen: onScreen[i] || i === cur,
             reading: driver === "scroll",
             reduced,
             stills,

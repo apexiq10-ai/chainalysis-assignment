@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { s01, s02, s03, s04, s05, s06, s07, s08, s09 } from "@/content";
-import { channelNotes, personaLabels, personas } from "@/content.authored";
+import { channelNotes, maturity, personaLabels, personas } from "@/content.authored";
 import LedgerCanvas from "@/components/LedgerCanvas";
-import { B, Film, Foot, Frame, Guides, Mark, Ref, useDeck, useSection, useTick } from "@/components/ui";
+import { B, Film, Foot, Frame, Mark, Ref, useDeck, useSection, useTick } from "@/components/ui";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");
 const pad3 = (n: number) => String(n).padStart(3, "0");
@@ -54,14 +54,14 @@ function Arrow({ n }: { n: number }) {
 }
 
 export function S02() {
-  const { active } = useSection();
+  const { onScreen } = useSection();
   const [ask, create, codify] = s02.steps;
   return (
     <Frame
       className="s02"
       media={
         <div className="film-wrap">
-          <Film name="object-specimen" play={active} className="grey" />
+          <Film name="object-specimen" play={onScreen} className="grey" />
           <div className="s02-veil" aria-hidden="true" />
         </div>
       }
@@ -243,7 +243,7 @@ function RunField({ on }: { on: boolean }) {
 }
 
 export function S04() {
-  const { step, active } = useSection();
+  const { step, onScreen } = useSection();
   return (
     <Frame
       className="s04"
@@ -270,18 +270,17 @@ export function S04() {
       </div>
 
       <div className="field-col">
+        {/* The clip stays mounted and loaded between visits so build 0 never shows a loading frame. */}
+        <div className="specimen" style={step === 0 ? undefined : { display: "none" }}>
+          <Film name="first-answer" play={onScreen && step === 0} />
+        </div>
         {step === 0 ? (
-          <>
-            <div className="specimen">
-              <Film name="first-answer" play={active} />
-            </div>
-            <div className="fieldcap">
-              <span className="t-label">Fig. 04.1</span>
-              <span className="t-label mute">
-                Run <span className="num">001</span>
-              </span>
-            </div>
-          </>
+          <div className="fieldcap">
+            <span className="t-label">Fig. 04.1</span>
+            <span className="t-label mute">
+              Run <span className="num">001</span>
+            </span>
+          </div>
         ) : (
           <RunField on={step >= 1} />
         )}
@@ -358,9 +357,15 @@ function PersonaMap({ k }: { k: number }) {
 }
 
 export function S05() {
-  const { step, arrival } = useSection();
+  const { step, arrival, active } = useSection();
   const [picked, setPicked] = useState<number | null | undefined>(undefined);
   useEffect(() => setPicked(undefined), [step, arrival]);
+  // Leaving 05 puts it back on item 1 for the next visit.
+  const was = useRef(active);
+  useEffect(() => {
+    if (was.current && !active) setPicked(undefined);
+    was.current = active;
+  }, [active]);
   const fromStep = step >= 1 && step <= 4 ? step - 1 : 0;
   const open = picked === undefined ? fromStep : picked;
   return (
@@ -451,7 +456,48 @@ export function S06() {
 }
 
 /* 07 · GTM II: MULTI-CHANNEL ------------------------------------------- */
+/* One story, every channel, earned in phases. The approved channel matrix
+   stays whole; the maturity control switches its tactics on as evidence
+   grows: few, then more, then the system. Builds 2 to 4 are the three
+   phases, so → walks them and a click picks one. Nothing advances alone. */
+function PhaseButton({ k, phase }: { k: number; phase: number }) {
+  const { setStep } = useDeck();
+  const p = maturity.phases[k];
+  return (
+    <button
+      type="button"
+      className={`ph ${k === phase ? "on" : ""} ${k < phase ? "past" : ""}`}
+      aria-pressed={k === phase}
+      onClick={() => setStep("s07", 2 + k)}
+    >
+      <span className="t-label ph-top">
+        <span>{pad2(k + 1)}</span>
+        <span>{p.horizon}</span>
+      </span>
+      <span className="ph-nm">{p.name}</span>
+      <span className="t-label ph-ev">
+        {p.evidence}
+        <br />
+        {p.motion}
+      </span>
+    </button>
+  );
+}
+
 export function S07() {
+  const { step, active, reading } = useSection();
+  const { setStep } = useDeck();
+  const phase = Math.max(0, Math.min(maturity.phases.length - 1, step - 2));
+  const p = maturity.phases[phase];
+  const tier = (it: string) => maturity.activates[it] ?? 0;
+  const all = s07.stages.flatMap((st) => st.items);
+  const lit = all.filter((it) => tier(it) <= phase).length;
+  // Leaving 07 while reading puts it back on Foundational for the next visit.
+  const was = useRef(active);
+  useEffect(() => {
+    if (was.current && !active && reading) setStep("s07", 2);
+    was.current = active;
+  }, [active, reading, setStep]);
   return (
     <Frame
       className="s07"
@@ -474,7 +520,26 @@ export function S07() {
           ))}
         </B>
       </div>
-      <B n={2} v="cut" className="journey">
+      <B n={2} v="cut" className="maturity">
+        <div className="ph-nav" role="group" aria-label={maturity.thesis}>
+          <p className="t-label thesis">{maturity.thesis}</p>
+          {maturity.phases.map((_, k) => (
+            <PhaseButton key={k} k={k} phase={phase} />
+          ))}
+        </div>
+        <div className="ph-sum" aria-live="polite">
+          <p className="t-label">
+            <span className="mute">{maturity.activeLabel}</span>{" "}
+            <span className="num">{pad2(lit)}</span> / {pad2(all.length)}
+          </p>
+          <p className="ph-hd">{p.headline}</p>
+          <p className="ph-body">{p.body}</p>
+          <p className="t-label ph-focus">
+            <span className="mute">{maturity.focusLabel}</span> {p.focus}
+          </p>
+        </div>
+      </B>
+      <B n={2} v="cut" className="journey" data-phase={phase}>
         <svg className="thread thread-draw" viewBox="0 0 1000 12" preserveAspectRatio="none" aria-hidden="true">
           <line x1="0" y1="6" x2="990" y2="6" vectorEffect="non-scaling-stroke" />
           <path className="tip" d="M986 0 L1000 6 L986 12 Z" />
@@ -485,9 +550,17 @@ export function S07() {
             <p className="nm">{st.name}</p>
             <p className="t-label">{st.line}</p>
             <ul>
-              {st.items.map((it) => (
-                <li key={it}>{it}</li>
-              ))}
+              {st.items.map((it) => {
+                const t = tier(it);
+                return (
+                  <li key={it} className={`${t <= phase ? "on" : "off"} ${t === phase ? "new" : ""} ${t === 0 ? "core" : ""}`}>
+                    <span>{it}</span>
+                    <span className="tier" aria-label={maturity.phases[t].name}>
+                      {pad2(t + 1)}
+                    </span>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         ))}
@@ -501,7 +574,7 @@ export function S07() {
    one, click or Tab selects it. The active channel turns cobalt and the white
    panel beneath it always carries its question and what it means. */
 export function S08() {
-  const { step, active, reading } = useSection();
+  const { step, onScreen, reading } = useSection();
   const [hover, setHover] = useState<number | null>(null);
   const [picked, setPicked] = useState<number | null>(null);
   useEffect(() => setPicked(null), [step]);
@@ -512,11 +585,10 @@ export function S08() {
     <Frame
       className="s08"
       media={
-        step === 0 ? (
-          <div className="film-wrap">
-            <Film name="signal-noise" play={active} />
-          </div>
-        ) : null
+        // The clip stays mounted and loaded between visits so build 0 never shows a loading frame.
+        <div className="film-wrap" style={step === 0 ? undefined : { display: "none" }}>
+          <Film name="signal-noise" play={onScreen && step === 0} />
+        </div>
       }
       footer={
         <Foot>
@@ -584,13 +656,13 @@ export function S08() {
 /* One frame. The city runs from day into night behind it; the wedge and its
    expansion path sit above one dominant statement. */
 export function S09() {
-  const { active } = useSection();
+  const { onScreen } = useSection();
   return (
     <Frame
       className="s09"
       media={
         <div className="film-wrap">
-          <Film name="city-timelapse" play={active} className="grey" />
+          <Film name="city-timelapse" play={onScreen} className="grey" />
           <div className="close-veil" aria-hidden="true" />
         </div>
       }

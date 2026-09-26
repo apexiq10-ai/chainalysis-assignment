@@ -13,6 +13,7 @@ export type SectionState = {
   step: number;
   mode: Mode;
   active: boolean; // this section holds the viewport
+  onScreen: boolean; // any part of this section is in the viewport
   reading: boolean; // scroll-driven (microsite) rather than key-driven (presentation)
   reduced: boolean;
   stills: boolean; // ?stills: every clip shows its poster frame
@@ -38,30 +39,18 @@ export const useDeck = () => useContext(DeckContext);
 
 /* -------------------------------------------------------------- frame */
 
-export function Guides() {
-  return (
-    <div className="guides" aria-hidden="true">
-      {Array.from({ length: 12 }, (_, k) => (
-        <i key={k} />
-      ))}
-    </div>
-  );
-}
-
 export function Frame({
   className = "",
   children,
   media,
   overlay,
   footer,
-  guides = true,
 }: {
   className?: string;
   children: ReactNode;
   media?: ReactNode;
   overlay?: ReactNode;
   footer?: ReactNode;
-  guides?: boolean;
 }) {
   const s = useSection();
   return (
@@ -75,7 +64,6 @@ export function Frame({
     >
       {media}
       <div className="wrap">
-        {guides && <Guides />}
         <div className="frame">{children}</div>
         {footer}
       </div>
@@ -165,8 +153,9 @@ export function useTick(target: number, on: boolean, frames = 12, reduced = fals
 
 /* --------------------------------------------------------------- film
    Ambient footage. Always loaded, muted, looping, no chrome. It plays while
-   its section holds the screen, and a watchdog resumes it if power saving or
-   a stalled loop ever pauses it. `?stills` is the only way to get a poster. */
+   its section is on screen (so an incoming frame is already moving as it
+   scrolls in), and a watchdog resumes it if power saving or a stalled loop
+   ever pauses it. `?stills` is the only way to get a poster. */
 
 export function Film({ name, play, className = "" }: { name: string; play: boolean; className?: string }) {
   const ref = useRef<HTMLVideoElement>(null);

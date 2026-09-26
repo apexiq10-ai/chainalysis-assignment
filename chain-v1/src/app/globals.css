@@ -84,15 +84,8 @@ video { display: block; }
 .wrap { max-width: var(--max); margin-inline: auto; padding-inline: var(--gutter); position: relative; width: 100%; }
 .g { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); position: relative; }
 .g > * { grid-column: var(--c, 1 / -1); padding-inline: var(--inset); min-width: 0; }
-.guides { position: absolute; inset: 0 var(--gutter); display: grid; grid-template-columns: repeat(12, 1fr); pointer-events: none; z-index: 0; }
-.guides i { border-left: 1px solid var(--hair); }
-.guides i:nth-child(even) { border-left-color: transparent; }
-.guides i:last-child { border-right: 1px solid var(--hair); }
 @media (max-width: 760px) {
   .g > * { grid-column: var(--cm, 1 / -1); }
-  .guides { grid-template-columns: repeat(2, 1fr); }
-  .guides i:nth-child(n + 3) { display: none; }
-  .guides i:nth-child(2) { border-left-color: var(--hair); }
 }
 
 /* ------------------------------------------------------------- section */
@@ -174,8 +167,8 @@ video { display: block; }
 /* ---- 01 · Open ------------------------------------------------------ */
 .s01 .ledger { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
 .s01 .frame { justify-content: flex-end; }
-.s01 .t-broadcast, .s01 .lines .t-broadcast { font-size: clamp(2.6rem, min(7.6vw, 12vh), 10rem); }
-.s01 .lines { display: flex; flex-direction: column; gap: clamp(10px, 2.4vh, 28px); }
+.s01 .t-broadcast, .s01 .lines .t-broadcast { font-size: clamp(2rem, min(3.9vw, 7vh), 5.8rem); }
+.s01 .lines { display: flex; flex-direction: column; gap: clamp(14px, 3.4vh, 44px); }
 .s01 .tag { position: absolute; top: calc(var(--chrome-h) + 14px); right: calc(var(--gutter) + var(--inset)); z-index: 2; }
 .lockup { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; background: var(--ink); }
 .lockup .film { filter: saturate(1.08) contrast(1.04); }
@@ -351,10 +344,11 @@ video { display: block; }
 @media (max-width: 520px) { .stairs { grid-template-columns: 1fr; } }
 
 /* ---- 07 · GTM II: Multi-channel ------------------------------------ */
-.s07 .frame { display: flex; flex-direction: column; gap: clamp(18px, 3.4vh, 44px); padding-top: clamp(16px, 3vh, 40px); }
+.s07 .frame { display: flex; flex-direction: column; gap: clamp(16px, 2.6vh, 36px); padding-top: clamp(14px, 2.4vh, 34px); }
 .s07 .head { display: flex; flex-direction: column; padding-inline: var(--inset); position: relative; z-index: 1; }
-.s07-title { font-size: clamp(1.9rem, min(4.6vw, 8vh), 5.6rem); }
-.takeaway { display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: baseline; margin-top: clamp(12px, 2.2vh, 24px); padding-top: clamp(10px, 1.8vh, 18px); border-top: 2px solid var(--ink); font-family: var(--f-display); font-variation-settings: "wdth" 112; font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-size: clamp(1.3rem, min(2.4vw, 4.4vh), 3rem); }
+.s07-title { font-size: clamp(1.7rem, min(3.8vw, 6.6vh), 4.8rem); }
+.s07-title .hollow { display: block; }
+.takeaway { display: flex; gap: 8px 22px; flex-wrap: wrap; align-items: baseline; margin-top: clamp(12px, 2.2vh, 24px); padding-top: clamp(10px, 1.8vh, 18px); border-top: 2px solid var(--ink); font-family: var(--f-display); font-variation-settings: "wdth" 112; font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-size: clamp(1.15rem, min(2vw, 3.6vh), 2.6rem); }
 .takeaway .strong { background: var(--ink); color: var(--paper); padding: 0.08em 0.35em; }
 .journey { flex: 1; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; padding-top: 22px; }
 .thread { position: absolute; left: var(--inset); top: 0; width: calc(100% - 2 * var(--inset)); height: 12px; overflow: visible; }
@@ -365,9 +359,38 @@ video { display: block; }
 .journey .stage::before { content: ""; position: absolute; left: var(--inset); top: -22px; width: 12px; height: 12px; background: var(--ink); }
 .journey .stage > .t-label.mute { padding-top: 12px; }
 .journey .stage .nm { font-family: var(--f-display); font-variation-settings: "wdth" 125; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(1.1rem, min(1.68vw, 3.5vh), 2.4rem); }
-.journey .stage ul { display: flex; flex-direction: column; margin-top: 4px; }
-.journey .stage li { font-size: clamp(0.95rem, min(1.45vw, 2.75vh), 1.85rem); line-height: 1.22; padding-block: clamp(6px, 2.35vh, 28px); border-top: 1px solid var(--hair-strong); }
+.journey .stage ul { display: flex; flex-direction: column; gap: clamp(4px, 0.7vh, 8px); margin-top: 6px; }
+/* A tactic is either switched on (ink, the active treatment) or not yet
+   (dashed, dimmed, still readable). Its tier number says which phase turns it on. */
+.journey .stage li { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; font-size: clamp(0.9rem, min(1.14vw, 2.1vh), 1.5rem); line-height: 1.18; padding: clamp(6px, 1.05vh, 13px) clamp(8px, 0.7vw, 14px); border: 1.5px solid var(--ink); }
+.journey .stage li .tier { font-family: var(--f-mono); font-size: 0.68em; letter-spacing: 0.04em; flex: none; }
+.journey .stage li.on { background: var(--ink); color: var(--paper); }
+.journey .stage li.on .tier { color: rgba(232, 234, 228, 0.62); }
+/* The foundational plays stay marked in Signal at every phase: the system keeps its pressure there. */
+.journey .stage li.on.core .tier { color: var(--signal); }
+.journey .stage li.off { border-style: dashed; border-color: rgba(14, 16, 19, 0.5); color: rgba(14, 16, 19, 0.52); }
+.journey .stage li.new { animation: wipe 0.42s var(--ease-trace) both; }
+@media (prefers-reduced-motion: reduce) { .journey .stage li.new { animation: none; } }
+.maturity { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: stretch; }
+.ph-nav { grid-column: 1 / 4; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ph-nav .thesis { grid-column: 1 / -1; padding: 0 var(--inset) 8px; }
+.ph { display: flex; flex-direction: column; gap: clamp(4px, 0.8vh, 10px); margin-inline: var(--inset); padding: clamp(8px, 1.3vh, 16px) clamp(10px, 0.9vw, 16px) clamp(10px, 1.5vh, 18px); border-top: 3px solid var(--ink); text-align: left; cursor: pointer; color: var(--ink); }
+.ph:hover:not(.on) { background: rgba(14, 16, 19, 0.08); }
+.ph:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.ph.on { background: var(--ink); color: var(--paper); }
+.ph-top { display: flex; justify-content: space-between; gap: 8px; }
+.ph-nm { font-family: var(--f-display); font-variation-settings: "wdth" 125; font-weight: 900; text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.9; font-size: clamp(1.05rem, min(1.45vw, 2.9vh), 2rem); }
+.ph-ev { line-height: 1.35; }
+.ph:not(.on) .ph-ev { color: var(--mute); }
+.ph-sum { grid-column: 4 / 6; display: flex; flex-direction: column; gap: clamp(4px, 0.8vh, 10px); margin-inline: var(--inset); padding-top: 8px; border-top: 3px solid var(--ink); align-self: end; }
+.ph-hd { font-family: var(--f-display); font-variation-settings: "wdth" 112; font-weight: 800; text-transform: uppercase; letter-spacing: -0.015em; line-height: 1; font-size: clamp(1.1rem, min(1.8vw, 3.3vh), 2.4rem); }
+.ph-body { font-size: clamp(0.9rem, min(1.02vw, 1.9vh), 1.3rem); line-height: 1.3; }
+.ph-focus { line-height: 1.4; }
 @media (max-width: 900px) {
+  .maturity { grid-template-columns: 1fr; row-gap: 18px; }
+  .ph-nav, .ph-sum { grid-column: 1; }
+  .ph-nav { grid-template-columns: 1fr; row-gap: 6px; }
+  .ph-sum { align-self: start; }
   .journey { grid-template-columns: 1fr; row-gap: 22px; padding-top: 0; }
   .thread { display: none; }
   .journey .stage::before { display: none; }
@@ -558,7 +581,8 @@ video { display: block; }
   :root { --fs-broadcast: clamp(2.1rem, 10.4vw, 5rem); --fs-title: clamp(1.7rem, 8.4vw, 3.4rem); }
   .frame { padding-block: 28px 20px; }
   .s03 .left { padding-right: var(--inset); }
-  .s01 .t-broadcast, .s01 .lines .t-broadcast, .s05 h2, .close .earn, .s08[data-at="0"] .applause { font-size: var(--fs-broadcast); }
+  .s05 h2, .close .earn, .s08[data-at="0"] .applause { font-size: var(--fs-broadcast); }
+  .s01 .t-broadcast, .s01 .lines .t-broadcast { font-size: clamp(1.9rem, 8.6vw, 3rem); }
   .s02 .statement { font-size: clamp(2rem, 9.6vw, 4rem); }
   .s04 .beats .t-title, .s07-title { font-size: var(--fs-title); }
   .s03-build { font-size: clamp(1.3rem, 6.4vw, 2.2rem); }

@@ -31,6 +31,8 @@ const SYSTEM = new Set(
     "High", "Medium", "Low", "Lower",
     // evidence grammar on 03: the step mapping is an inference, labelled as such
     "Takes on", "Inference · step mapping",
+    // module path: content.ts pulls the authored A5 / A6 complements for the index
+    "./content.authored",
   ].map(norm),
 );
 

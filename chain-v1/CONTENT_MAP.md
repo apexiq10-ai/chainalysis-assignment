@@ -29,8 +29,8 @@ The appendix is one section that behaves like a deck: one exhibit on screen, ←
 | A2 | Workflow prioritization | Native SVG 2 × 2 (ease of proof × expansion potential), direct labels, the wedge as a filled cobalt marker. Launch-criteria table. | Placement exactly as specified; "Medium" and "Low" ease positions rendered as bands, not numeric coordinates. |
 | A3 | FI buying system | Two columns (creates demand / permits scale) converging with drawn connectors onto PRODUCTION DEPLOYMENT. | Verbatim pairs. |
 | A4 | Pilot economics | Before/after flow: six steps compress to one Chain step, both ending at HUMAN REVIEW. Baseline metrics table. SCALE WHEN as an equation. | No numbers exist in source; none shown. |
-| A5 | Integrated launch journey | Five-row journey table; operating-cadence timeline (Pre-GA, GA, +30, +60, +90) on a ruled axis. | Relative dates only, as supplied. |
-| A6 | GA readiness | Four readiness columns; release principle as an equation with the "announcement ready" version struck through; forbidden claims struck through. | Claim discipline verbatim. |
+| A5 | Integrated launch journey (complements 07) | Same table and cadence layout. Rows are the 07 stages (Recognize · Justify · Validate · Pilot · Scale) with the 07 plays in priority order, each tagged with the phase it switches on (01 / 02 / 03). Cadence: Pre-GA · GA (Foundational, 6) · +3 mo (Advancing, 11) · +12 mo (Mature, 15) · Next. | Authored copy in `content.authored.ts`; mirrors `maturity.activates` exactly. |
+| A6 | GA readiness (complements 09) | Same four-column layout and release principle. GA is earned on one alert workflow; the same four tests earn each next rung of the 09 expansion path. Field column = the 07 Foundational field plays. Forbidden claims struck through. | Authored copy in `content.authored.ts`; claim discipline verbatim. |
 
 ## Interaction
 

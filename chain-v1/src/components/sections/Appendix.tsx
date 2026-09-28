@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef, type CSSProperties, type ReactNode } from "react";
-import { a1, a2, a3, a4, a5, a6, appendixList } from "@/content";
+import { a1, a2, a3, a4, appendixList } from "@/content";
+// A5 and A6 carry the authored complements to main slides 07 and 09.
+import { a5, a6 } from "@/content.authored";
 import { Frame, Mark, useDeck, useSection } from "@/components/ui";
 
 const pad2 = (n: number) => String(n).padStart(2, "0");

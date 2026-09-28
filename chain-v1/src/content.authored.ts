@@ -148,3 +148,67 @@ export const maturity = {
     "Customer advocacy": 2,
   } as Record<string, number>,
 };
+
+// A5 · A6 COMPLEMENTS. Written at Arthur's direction so the appendix backs up
+// main slides 07 and 09 instead of restating an earlier version of them.
+// A5 is the detail behind 07: the same five buyer stages, the same fifteen
+// plays in the same priority order, and the phase each one switches on in
+// (01 Foundational, 02 Advancing, 03 Mature, as tagged on 07).
+// A6 is the gate behind 09: GA is earned on one alert workflow, and the same
+// four readiness tests earn each next rung of the 09 expansion path.
+// Same shapes as a5 / a6 in content.ts, so the exhibit layouts do not change.
+// Titles stay as they were: the 07 footer links to "A5 · Integrated launch journey".
+export const a5 = {
+  title: "Integrated launch journey",
+  headline:
+    "The launch should earn channel complexity: six plays at GA, fifteen at maturity, one story and one next action throughout.",
+  narrative: [
+    "Chainalysis should not switch every channel on at launch. A bank or FSI compliance buyer moves through five stages: recognize the digital-asset exposure, justify it internally, clear vendor and model risk, prove it on their own alerts, then earn the next workflow. The launch should activate channels in three phases as evidence accumulates. The Foundational phase, in the first three months, runs the six plays closest to product truth, the buyer and the field: executive POV, seller story, executive briefing, technical validation, Chain on Your SOP and the workshop.",
+    "The Advancing phase, from three to twelve months, adds five plays around the messages, audiences and motions already producing signal: PR and trade media, the governance package, customer proof, customer success and the workflow library. Analyst relations, the ROI model, Solutions + CS and customer advocacy join in the Mature phase, after twelve months, bringing the system to fifteen plays. At every phase, each channel tells the same workflow story and moves the buyer toward one next action: trying Chain on their own alerts.",
+  ],
+  exhibit: "Channel maturity by buyer stage",
+  columns: ["Stage", "Buyer job", "Plays in priority order · phase on", "Core asset", "Primary signal"],
+  rows: [
+    ["Recognize", "Name the digital-asset exposure", "Executive POV 01 · PR + trade media 02 · Analyst relations 03", "Hero story", "Qualified engagement"],
+    ["Justify", "Arm the buying committee", "Seller story 01 · Executive briefing 01 · ROI model 03", "Seller story", "Intent"],
+    ["Validate", "Clear vendor and model risk", "Technical validation 01 · Governance package 02 · Customer proof 02", "Governance package", "Evaluation"],
+    ["Pilot", "Prove it on their own alerts", "Chain on Your SOP 01 · Workshop 01 · Solutions + CS 03", "Chain on Your SOP", "Pilot start"],
+    ["Scale", "Earn the next workflow", "Customer success 02 · Workflow library 02 · Customer advocacy 03", "New workflow play", "Expansion"],
+  ] as string[][],
+  cadenceTitle: "Operating cadence · you earn channel complexity",
+  cadence: [
+    ["Pre-GA", "Design partners prove the wedge on their own alerts"],
+    ["GA", "Foundational: 6 plays. Prove the wedge."],
+    ["+3 mo", "Advancing: 11 plays. Expand what works."],
+    ["+12 mo", "Mature: 15 plays. Compound the system."],
+    ["Next", "Each proven workflow earns the next one"],
+  ] as [string, string][],
+  implication:
+    "One story. Every channel. One next action. Add a channel only when the evidence to support it exists.",
+};
+
+export const a6 = {
+  title: "GA readiness",
+  headline:
+    "GA should be earned on one alert workflow; the same four readiness tests then earn each next workflow.",
+  narrative: [
+    "Chain should reach GA on a single workflow: alert enrichment and investigation preparation. A credible financial-institution launch requires four forms of readiness to converge on that workflow. The product must perform it reliably and expose enough evidence to support review. Design partners must show measured improvement and repeat use on their own alerts. The second line must receive enough documentation to evaluate the operating model. The field must be able to explain, demonstrate and pilot that one workflow consistently.",
+    "The same four tests then govern expansion. Investigations, monitoring, source of funds, due diligence and broader digital-asset operations each earn a place in the launch claim only when product, customer, governance and field evidence exist for that workflow. If one dimension remains materially incomplete, Chainalysis should narrow the claim to the workflow it has proven instead of asking Marketing to compensate for missing proof. That is how Chain earns the right to change the institution.",
+  ],
+  exhibit: "Readiness gate for every workflow",
+  columns: [
+    { name: "Product", items: ["Alert workflow performs", "Chain provides run evidence", "Chain defines the human boundary", "Telemetry supports review", "Team understands change behavior"] },
+    { name: "Customer", items: ["Design partners active on their own alerts", "Measured improvement against baseline", "Customers repeat use", "Referenceable proof", "Signal for the next workflow"] },
+    { name: "Governance", items: ["Validation guide", "Model-use disclosure", "Sample run record", "Security / TPRM package", "Change-management guidance"] },
+    { name: "Field", items: ["Seller story", "Executive briefing", "Technical validation", "Chain on Your SOP", "Workshop"] },
+  ],
+  principleTitle: "Release principle · first workflow, then every next one",
+  principle: ["GA", "Product", "Customer", "Governance", "Field"],
+  not: "Not:",
+  notPrinciple: ["GA", "Announcement ready"],
+  disciplineTitle: "Claim discipline",
+  discipline:
+    "Avoid claims such as “court-ready AI,” “regulator-approved,” “no hallucinations,” or unverified performance gains. When Chainalysis discusses judicial acceptance, it should explicitly attach that claim to the underlying data and methodology, not to conclusions that Chain generates.",
+  avoid: ["court-ready AI", "regulator-approved", "no hallucinations", "unverified performance gains"],
+  implication: "Start with one alert. Earn each next workflow the same way.",
+};

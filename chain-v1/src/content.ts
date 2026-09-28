@@ -14,6 +14,8 @@ export type SectionMeta = {
   notes?: string[];
 };
 
+import { a5 as a5Shown, a6 as a6Shown } from "./content.authored";
+
 /* ---------------------------------------------------------------- MAIN DECK */
 
 export const s01 = {
@@ -372,6 +374,8 @@ export const a4 = {
   implication: "Build the ROI story from measured customer behavior, not retrospective assumptions.",
 };
 
+// Source record. On screen, A5 and A6 use the authored complements to main
+// slides 07 and 09 in content.authored.ts (same shapes).
 export const a5 = {
   title: "Integrated launch journey",
   headline:
@@ -442,7 +446,7 @@ export const sections: SectionMeta[] = [
   { id: "apx", index: "A", subject: "Appendix", part: "appendix", steps: 5, modes: ["record"] },
 ];
 
-export const appendixList = [a1, a2, a3, a4, a5, a6].map((a, i) => ({
+export const appendixList = [a1, a2, a3, a4, a5Shown, a6Shown].map((a, i) => ({
   id: `a${i + 1}`,
   index: `A${i + 1}`,
   title: a.title,

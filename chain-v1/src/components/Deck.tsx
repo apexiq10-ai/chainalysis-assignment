@@ -32,8 +32,7 @@ const modeAt = (i: number, step: number): Mode => {
   return m[Math.min(step, m.length - 1)];
 };
 
-// URL anchor for a section at a build: appendix builds are a1 to a6.
-const anchorFor = (i: number, step: number) => (i === APX ? `a${step + 1}` : sections[i].id);
+// In-deck link targets (evidence footers, index): s01 to s09, a1 to a6.
 const parseAnchor = (hash: string): [number, number] | null => {
   const m = /^a([1-6])$/.exec(hash);
   if (m) return [APX, Number(m[1]) - 1];
@@ -171,11 +170,16 @@ export default function Deck() {
     const params = new URLSearchParams(window.location.search);
     if (params.has("present")) setDriver("key");
     if (params.has("stills")) setStills(true);
-    const target = parseAnchor(window.location.hash.replace("#", ""));
+    // Every load opens on 01. A stale anchor (for example one carried back
+    // through the password page) or a restored scroll position must never
+    // drop the audience mid-deck, so both are discarded here.
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (window.location.hash) history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
     // A timer, not rAF: rAF never fires in a background tab, and the deck
     // must be ready when the presenter switches to it.
     const t = window.setTimeout(() => {
-      if (target && target[0] > 0) goTo(target[0], target[1]);
+      window.scrollTo(0, 0);
       setReady(true);
     }, 0);
     return () => {
@@ -217,13 +221,6 @@ export default function Deck() {
       window.removeEventListener("resize", onScroll);
     };
   }, [setStepAt]);
-
-  /* ---- keep the URL on the current section (and appendix exhibit) */
-  useEffect(() => {
-    if (!ready) return;
-    const id = anchorFor(cur, steps[cur]);
-    if (window.location.hash !== `#${id}`) history.replaceState(null, "", `#${id}`);
-  }, [cur, steps, ready]);
 
   /* ---- reading mode: every section already rests in its reading state
      before it scrolls into view, so moving between sections never passes
